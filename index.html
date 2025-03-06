@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <style>
+       /* General Reset and Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+/* Header Navigation Styling */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    padding: 10px 0;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    color: #00bcd4;
+}
+
+/* Typing Animation */
+#typing-container {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00FF00; /* Green color */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 2px solid #00FF00; /* Blinking cursor */
+    animation: blink-cursor 0.6s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Rotating Half Circle Border with Thin Sharp Edges */
+.rotating-border {
+    position: absolute; /* Fixed position for the image */
+    top: 20px; /* Move image a bit towards the top */
+    right: 120px; /* Move image to the left (near center) */
+    transform: translateX(0); /* Center the image horizontally */
+    width: 350px; /* Enlarge the image */
+    height: 350px; /* Enlarge the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Thin Sharp Border */
+.half-circle {
+    position: absolute;
+    width: 350px; /* Adjust for the larger image */
+    height: 350px; /* Adjust for the larger image */
+    border: 3px solid transparent; /* Thin border thickness for sharp edges */
+    border-top: 3px solid #00FF00; /* Green sharp top border */
+    border-radius: 50%;
+    transform-origin: center;
+    animation: rotate-half-circle 3s linear infinite;
+}
+
+.half-circle-1 {
+    transform: rotate(0deg); /* Start at 0 degrees */
+}
+
+.half-circle-2 {
+    transform: rotate(180deg); /* Start at 180 degrees */
+    animation: rotate-half-circle 3s linear 1.5s infinite; /* Delay to create the staggered effect */
+}
+
+@keyframes rotate-half-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Image inside rotating border */
+.rotating-border img {
+    width: 100%; /* Make the image fit within the larger border */
+    height: 100%; /* Make the image fit within the larger border */
+    object-fit: cover;
+    border-radius: 70%; /* Keep the image circular */
+}
+
+/* Button and Icons Container */
+.cta-container {
+    position: fixed;
+    bottom: 100px;
+    right: 80%; /* Align to the right side */
+    transform: translateX(50%); /* Center the container horizontally */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the button and icons */
+}
+
+/* CV Download Button */
+.cv-button {
+    background-color: #16c22d;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.cv-button:hover {
+    background-color: #333;
+}
+
+/* Icon Section */
+.icon-container a {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.icon-container a:hover {
+    color: #16c22d;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    header {
+        padding: 15px 10px;
+    }
+
+    header nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    /* Typing Animation */
+    #typing-container {
+        font-size: 30px;
+    }
+
+    /* Rotating Border Section */
+    .rotating-border {
+        width: 250px;
+        height: 250px;
+        right: 10px; /* Adjust position on mobile */
+    }
+
+    .half-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cta-container {
+        position: fixed;
+        bottom: 50px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: column;
+    }
+
+    .cv-button {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .icon-container a {
+        font-size: 25px;
+    }
+
+    /* Adjust layout for smaller screens */
+    body {
+        padding: 20px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+   <!-- Header Section with Logo -->
+<header>
+    <nav style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+        <!-- Logo Section -->
+        <div>
+            <img src="images/logo.png" alt="Logo" style="height: 80px; width: auto; margin-right: 20px;"> <!-- Larger logo with spacing -->
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.php">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Flexbox Container for Typing Animation and Rotating Image -->
+    <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%; height: 100%; padding-left: 150px;">
+        <!-- Typing Animation Section on the Left -->
+        <div>
+            <h1>Hello, my name is Andrew from Nairobi kenya. <br>I'm a</h1><div id="typing-container"></div>
+        </div>
+       
+    </div>
+
+    <!-- Rotating Half-Circle Border around Image on the Right -->
+    <div class="rotating-border">
+        <div class="half-circle half-circle-1"></div>
+        <div class="half-circle half-circle-2"></div>
+        <img src="images/image1.jpg" alt="Animated Image"> <!-- Replace with your image path -->
+    </div>
+
+    <!-- Button and Icons Container -->
+    <div class="cta-container">
+        <!-- CV Download Button -->
+        <a class="cv-button" href="cv.pdf" download="My_CV.pdf">Download CV</a> <!-- Replace with your CV path -->
+
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+
+    <script>
+        const words = ["Coder", "Web Designer", "Youtuber", "Web Developer"];
+        let wordIndex = 0; // Track the current word
+        const typingContainer = document.getElementById("typing-container");
+
+        function typeWord(word, callback) {
+            let charIndex = 0; // Track the current character
+            typingContainer.textContent = ""; // Clear the container
+            const interval = setInterval(() => {
+                typingContainer.textContent += word[charIndex]; // Add the next character
+                charIndex++;
+                // Stop typing when the word is complete
+                if (charIndex === word.length) {
+                    clearInterval(interval);
+                    setTimeout(callback, 1000); // Pause for 1 second before the next word
+                }
+            }, 200); // Typing speed in milliseconds
+        }
+
+        function startTyping() {
+            typeWord(words[wordIndex], () => {
+                wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+                startTyping(); // Recursively type the next word
+            });
+        }
+
+        // Start the typing animation
+        startTyping();
+    </script>
+
+    
+</body>
+</html>

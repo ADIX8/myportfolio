@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <style>
+        /* General Reset and Box-Sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        header nav {
+            text-align: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        header nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            margin-top: 80px; /* To prevent overlap with the fixed header */
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #333;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-details {
+            transform: translateY(0);
+        }
+
+        .project-details h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-details p {
+            font-size: 14px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <!-- Updated Logo -->
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <img src="images/logo.png" alt="Updated Logo" style="height: 80px; width: auto; margin-right: 20px;">
+                
+                <!-- Navigation Links -->
+                <div style="flex-grow: 1; text-align: right;">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="contact.php">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Portfolio Section -->
+<div class="portfolio">
+    <!-- Row 1 -->
+    <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1">
+        <div class="project-details">
+            <h3>Project 1</h3>
+            <p>This was my first project for a brewery management system, and I used HTML, CSS, JavaScript, and PHP as the backend.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj.jpg" alt="Project 2">
+        <div class="project-details">
+            <h3>Project 2</h3>
+            <p>A brief description of project 2, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 3">
+        <div class="project-details">
+            <h3>Project 3</h3>
+            <p>A brief description of project 3, including technologies used.</p>
+        </div>
+    </div>
+    
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 4">
+        <div class="project-details">
+            <h3>Project 4</h3>
+            <p>A brief description of project 4, including technologies used.</p>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 5">
+        <div class="project-details">
+            <h3>Project 5</h3>
+            <p>A brief description of project 5, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj.jpg" alt="Project 6">
+        <div class="project-details">
+            <h3>Project 6</h3>
+            <p>A brief description of project 6, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 7">
+        <div class="project-details">
+            <h3>Project 7</h3>
+            <p>A brief description of project 7, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 8">
+        <div class="project-details">
+            <h3>Project 8</h3>
+            <p>A brief description of project 8, including technologies used.</p>
+        </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 9">
+        <div class="project-details">
+            <h3>Project 9</h3>
+            <p>A brief description of project 9, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj.jpg" alt="Project 10">
+        <div class="project-details">
+            <h3>Project 10</h3>
+            <p>A brief description of project 10, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 11">
+        <div class="project-details">
+            <h3>Project 11</h3>
+            <p>A brief description of project 11, including technologies used.</p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="images/proj1.jpg" alt="Project 12">
+        <div class="project-details">
+            <h3>Project 12</h3>
+            <p>A brief description of project 12, including technologies used.</p>
+        </div>
+    </div>
+
+   
+</div>
+
+</body>
+</html>
